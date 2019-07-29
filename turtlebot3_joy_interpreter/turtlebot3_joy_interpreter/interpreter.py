@@ -27,19 +27,19 @@ class InterpreterNode(Node):
         self.publisher = self.create_publisher(Twist, '/cmd_vel')
 
     def joy_cb(self, msg):
-        lin_vel = -msg.axes[LEFT_VERTICAL_STICK]
-        ang_vel = msg.axes[RIGHT_HORIZONTAL_STICK]
+        lin_vel = -msg.axes[LEFT_VERTICAL_STICK] * 1.0
+        ang_vel = msg.axes[RIGHT_HORIZONTAL_STICK] * 1.0
         drive_pressed = msg.buttons[R_BUTTON]
 
         cmd = Twist()
-        cmd.linear.y = 0
-        cmd.linear.z = 0
-        cmd.angular.x = 0
-        cmd.angular.y = 0
+        cmd.linear.y = 0.
+        cmd.linear.z = 0.
+        cmd.angular.x = 0.
+        cmd.angular.y = 0.
 
         if not drive_pressed:
-            cmd.linear.x = 0
-            cmd.angular.z = 0
+            cmd.linear.x = 0.
+            cmd.angular.z = 0.
         else:
             cmd.linear.x = lin_vel * MAX_LIN_VEL
             cmd.angular.z = ang_vel * MAX_ANG_VEL
