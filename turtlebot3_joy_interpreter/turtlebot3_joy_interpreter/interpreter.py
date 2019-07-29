@@ -27,7 +27,7 @@ class InterpreterNode(Node):
         self.publisher = self.create_publisher(Twist, '/cmd_vel')
 
     def joy_cb(self, msg):
-        lin_vel = -msg.axes[LEFT_VERTICAL_STICK] * 1.0
+        lin_vel = msg.axes[LEFT_VERTICAL_STICK] * 1.0
         ang_vel = msg.axes[RIGHT_HORIZONTAL_STICK] * 1.0
         drive_pressed = msg.buttons[R_BUTTON]
 
