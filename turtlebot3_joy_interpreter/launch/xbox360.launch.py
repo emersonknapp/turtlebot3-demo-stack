@@ -24,7 +24,9 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     joy = Node(package='joy', node_executable='joy_node', output='screen')
-    joy_interp = Node(package='turtlebot3_joy_interpreter', node='xbox360_interpreter')
+    joy_interp = Node(
+        package='turtlebot3_joy_interpreter', node_executable='xbox360_interpreter',
+        output='screen')
     return launch.LaunchDescription([
         joy,
         joy_interp,
