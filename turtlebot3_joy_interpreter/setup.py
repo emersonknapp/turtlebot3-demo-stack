@@ -1,3 +1,6 @@
+import glob
+import os
+
 from setuptools import find_packages
 from setuptools import setup
 
@@ -11,6 +14,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/{}/launch'.format(package_name),
+            glob.glob(os.path.join('launch', '*.launch.py'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -26,13 +31,13 @@ setup(
         'Topic :: Software Development',
     ],
     description=(
-        'Nodes to interpret joystick output and turn into motion commands, for the Turtlebot3.',
+        'Nodes to interpret joystick output and turn into motion commands for the Turtlebot3.',
     ),
     license='BSD 3-Clause',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'xbox360_interpreter = turtlebot3_joy_interpreter.interpreter:main',
+            'xbox360_interpreter = {}.interpreter:main'.format(package_name),
         ],
     },
 )
