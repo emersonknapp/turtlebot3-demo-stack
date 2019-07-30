@@ -13,18 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from gpiozero import PWMLED
+from gpiozero import PWMLED, LED
 
 import rclpy
 from rclpy.node import Node
 
 OUTPUT_PIN = 18
+POWER_PIN = 15
 
 
 class IndicatorNode(Node):
     def __init__(self, led):
         super().__init__('indicatorled')
         self.led = led
+        self.power = LED(POWER_PIN)
+        self.power.on()
         self.startup_pulse()
         self.create_timer = self.create_timer(2.0, self.blink)
 
