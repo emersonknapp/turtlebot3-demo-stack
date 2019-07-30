@@ -29,14 +29,14 @@ class IndicatorNode(Node):
         self.power = LED(POWER_PIN)
         self.power.on()
         self.startup_pulse()
-        self.create_timer = self.create_timer(2.0, self.blink)
+        self.create_timer = self.create_timer(3.0, self.blink)
 
     def startup_pulse(self):
         self.led.pulse(fade_in_time=1, fade_out_time=0, n=1, background=False)
         self.led.value = 1
 
     def blink(self):
-        self.led.blink(on_time=0.2, off_time=0.1, n=2, background=False)
+        self.led.blink(on_time=0.1, off_time=0.08, n=2, background=False)
         self.led.value = 1
 
 
