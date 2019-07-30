@@ -12,7 +12,8 @@
   <author email="emerson.b.knapp@gmail.com">Emerson Knapp</author>
 
   <depend>rclpy</depend>
-  <depend>python3-gpiozero</depend>
+  <depend>python3-gpiozero-pip</depend>
+  <depend>python3-rpi.gpio-pip</depend>
 
   <export>
     <build_type>ament_python</build_type>
