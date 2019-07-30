@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>turtlebot3_on_robot_stack</name>
+  <version>0.0.1</version>
+  <description>
+    Wrapper package with a launchfile for an entire on-robot Turtlebot3 ROS2 demo software stack.
+  </description>
+  <license>BSD 3-Clause</license>
+  <maintainer email="aws-ros-contributions@amazon.com">AWS ROS Contributions</maintainer>
+
+  <author email="emerson.b.knapp@gmail.com">Emerson Knapp</author>
+
+  <exec_depend>hls_lfcd_lds_driver</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>rpi_indicator_led</exec_depend>
+  <exec_depend>turtlebot3_joy_interpreter</exec_depend>
+  <exec_depend>turtlebot3_bringup</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
