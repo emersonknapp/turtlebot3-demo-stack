@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>rpi_indicator_led</name>
+  <version>0.0.1</version>
+  <description>
+    Nodes to run indicator LEDs on a Raspberry Pi, for simple feedback from headless applications.
+  </description>
+  <license>BSD 3-Clause</license>
+  <maintainer email="aws-ros-contributions@amazon.com">AWS ROS Contributions</maintainer>
+
+  <author email="emerson.b.knapp@gmail.com">Emerson Knapp</author>
+
+  <depend>rclpy</depend>
+  <depend>python3-gpiozero</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
