@@ -1,0 +1,21 @@
+repositories:
+  hls_lfcd_lds_driver:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver
+    version: ros2
+  turtlebot3_msgs:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+    version: ros2
+  turtlebot3:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3.git
+    version: ros2
+  joystick_drivers:
+    type: git
+    url: https://github.com/ros2/joystick_drivers
+    version: dashing
+  turtlebot3-demo-stack:
+    type: git
+    url: https://github.com/emersonknapp/turtlebot3-demo-stack
+    version: master
